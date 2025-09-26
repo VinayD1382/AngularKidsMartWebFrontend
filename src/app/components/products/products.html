@@ -1,0 +1,75 @@
+<div class="container mt-5" *ngIf="products?.length; else loading">
+<h2 class="best-sellers-heading text-center mb-4">Best Seller</h2>
+
+  <div class="row">
+    <div class="col-md-4 col-lg-2 mb-4" *ngFor="let product of products" [id]="product._id">
+      <div class="card h-100">
+        <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}">
+        <div class="card-body">
+          <h6 class="card-title">{{ product.name }}</h6>
+          <p class="card-text">
+            <span *ngIf="product.onSale" class="badge bg-danger mb-2">SALE</span><br>
+            <span *ngIf="product.oldPrice" class="text-muted text-decoration-line-through">
+              Rs. {{ product.oldPrice }}
+            </span>
+            <span class="fw-bold text-primary">Rs. {{ product.price }}</span>
+          </p>
+
+          <div class="d-flex action-buttons">
+            <button class="btn buy-now" (click)="openModal(product)">Buy</button>
+            <button class="btn add-cart" (click)="addToCart(product)">Cart</button>
+            <button class="btn eye-btn" (click)="openModal(product, true)">👁️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-3">
+    <button class="btn btn-primary mt-4 px-4">View All</button>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="container mt-5">
+    <p class="text-center">Loading products...</p>
+  </div>
+</ng-template>
+
+<div class="modal-overlay" *ngIf="selectedProduct">
+<div class="modal-content" [ngClass]="{ 'image-only': showImageOnly }">
+    <span class="close-btn" (click)="closeModal()">✖</span>
+
+    <ng-container *ngIf="showImageOnly; else fullProduct">
+      <img [src]="selectedProduct.imageUrl" 
+           alt="{{ selectedProduct.name }}" 
+           class="modal-img">
+    </ng-container>
+
+    <ng-template #fullProduct>
+      <div class="modal-body">
+        
+        <div class="modal-left">
+          <img [src]="selectedProduct.imageUrl" 
+               class="modal-img" 
+               alt="{{ selectedProduct.name }}">
+        </div>
+
+        <div class="modal-right">
+          <h2 class="product-title">{{ selectedProduct.name }}</h2>
+          <p class="price">Rs. {{ selectedProduct.price }}</p>
+
+          <div class="quantity-control">
+            <button (click)="decreaseQty()">−</button>
+            <span>{{ quantity }}</span>
+            <button (click)="increaseQty()">+</button>
+          </div>
+
+          <p style="font-size: 20px;">Total: Rs. {{ selectedProduct.price * quantity }}</p>
+
+          <button class="custom-checkout" (click)="checkout()">Checkout</button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

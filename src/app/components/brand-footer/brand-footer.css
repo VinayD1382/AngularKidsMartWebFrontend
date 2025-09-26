@@ -1,0 +1,122 @@
+.footer {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-top .col {
+  flex: 1 1 200px;
+  margin-bottom: 20px;
+}
+
+.footer-top h5 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-top ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-top ul li {
+  margin-bottom: 8px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+}
+
+.footer-middle {
+  margin-top: 20px;
+}
+
+.footer-middle .payments img {
+  max-height: 40px;
+  margin: 0 10px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.promotion-container {
+  display: flex;
+  width: 1500px;
+  height: 300px;
+  margin-top: 10px;
+  margin-left: 30px;
+  border-radius: 0px;
+}
+
+.section {
+  width: 48%;
+  color: white;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  justify-content: center;    
+  align-items: center;        
+  text-align: center; 
+}
+
+.text-content {
+  max-width: 300px;
+  margin-left: 180px; 
+  margin-top: 50px;   
+
+}
+
+.text-content h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.text-content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.text-content button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

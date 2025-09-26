@@ -1,0 +1,37 @@
+<div class="container mt-5" *ngIf="products?.length; else loading">
+<h2 class="best-sellers-heading text-center mb-4">Top Brands</h2>
+
+  <div class="row">
+    <div class="col-md-4 col-lg-2 mb-4" *ngFor="let product of products">
+      <div class="card h-100">
+        <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}">
+        <div class="card-body">
+          <h6 class="card-title">{{ product.name }}</h6>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-3">
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="container mt-5">
+    <p class="text-center">Loading products...</p>
+  </div>
+</ng-template>
+
+
+ <div class="promotion-container">
+
+  <div class="section left" style="background-image: url('Banner3.png');">
+    <div class="text-content">
+      <h4>Holiday Deals</h4>
+      <h1>Up to 30% off</h1>
+      <p>Selected Toy Brands</p>
+      <button>Shop</button>
+    </div>
+  </div>
+  </div>

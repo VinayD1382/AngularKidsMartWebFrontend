@@ -1,0 +1,50 @@
+<div class="cart-page">
+  <h2 class="page-title">Your Shopping Cart</h2>
+
+  <div class="cart-container">
+    <div class="cart-items">
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <img [src]="item.imageUrl" alt="{{ item.name }}" class="cart-img" />
+
+        <div class="item-details">
+          <h3>{{ item.name }}</h3>
+          <p class="price">₹{{ item.price }}</p>
+
+          <div class="quantity-control">
+            <button (click)="decreaseQuantity(item)">-</button>
+            <span>{{ item.quantity || 1 }}</span>
+            <button (click)="increaseQuantity(item)">+</button>
+          </div>
+
+          <a href="#" (click)="removeItem(item)" class="remove-link">Remove</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-details">
+      <h3>PRICE DETAILS</h3>
+      <div class="price-row">
+        <span>Price ({{ cartItems.length }} item)</span>
+        <span>₹{{ getTotal() }}</span>
+      </div>
+      <div class="price-row discount">
+        <span>Discount</span>
+        <span>-₹{{ getDiscount() }}</span>
+      </div>
+      <div class="price-row">
+        <span>Platform Fee</span>
+        <span>₹5</span>
+      </div>
+      <hr />
+      <div class="price-row total">
+        <span>Total Amount</span>
+        <span>₹{{ getTotal() - getDiscount() + 5 }}</span>
+      </div>
+
+<button class="place-order-btn" (click)="placeorder()">
+  PLACE ORDER
+</button>
+
+    </div>
+  </div>
+</div>

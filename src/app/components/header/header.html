@@ -1,0 +1,129 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="top-bar">
+  <span>Free Shipping for orders over Rs.300</span>
+  <div class="links">
+    <a href="tel:+1234567890">Call-Us:888-468-1382</a>
+  </div>
+</div>
+
+<!--<header class="header">
+  <div class="icons">
+    <img src="/kidslogo.png" alt="Kids Logo" width="200">
+    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-shopping-cart"></i>
+  </div>
+ <div class="search-bar">
+    <input type="text" placeholder="🔍Search..."  />
+  </div>
+
+</header>
+-->
+<header class="header">
+  <div class="icons">
+    <img src="/dk10.png" alt="Kids Logo" width="200" style="border-radius: 0%; margin-right: 0px; ">
+    <img src="/dk.png" alt="Kids Logo" width="200" style="border-radius: 0%; width: 100px; margin-left: 0px;">
+
+  </div>
+<!--
+  <div class="kidsmart-banner">
+⛳
+    <img src="/image.png" alt="KidsMart Banner">🤷
+  </div>
+
+
+<div class="header-offer">
+  <p>🎉 Festive Sale: Flat 20% OFF on Kids Wear!</p>
+</div>
+-->
+  <!--<div class="childpage1">
+    <img src="/aaaa.png" alt="Kids Logo" width="150">
+  </div>-->
+  <div class="childpage4">
+<!-- <h2 style="margin-left: 40px;"><strong>Offer: 50% off on Boyswear</strong></h2>-->
+ <div class="offer-banner">
+  <span class="offer-badge">🔥 Hot Deal</span>
+  <span class="offer-text">50% OFF on <strong>Boys Wear</strong></span>
+  <span class="offer-sub">Limited Time Only!</span>
+</div>
+
+  
+</div>
+  <div class="childpage">
+    <img src="/child.png" alt="Kids Logo" width="150">
+  </div>
+  <div class="search-bar">
+  <input
+    type="text"
+    placeholder="🔍 Search products..."
+    [(ngModel)]="searchQuery"
+  />
+  <button (click)="searchProduct()" style="background-color: rgb(46, 25, 167);">Search</button>
+ <div class="action-icons">
+  <button routerLink="/userlogin" class="icon-btn login-btn" style="color: rgb(251, 249, 249); background-color: rgb(22, 69, 2);">
+    <i class="fas fa-user"></i> LogIn
+  </button>
+
+  <button class="icon-btn cart-btn" [routerLink]="'/cart'" style="background-color: rgb(62, 23, 74);">
+    <i class="fas fa-shopping-cart"></i>
+    <span  *ngIf="cartCount > 0">{{ cartCount }}</span>
+  </button>
+
+  <a routerLink="/adminlogin" class="admin-link admin-btn">
+    <i class="fas fa-user"></i> Admin
+  </a>
+</div>
+
+
+
+<div class="cart-dropdown" *ngIf="showCart">
+  <h4 class="cart-title">My Cart</h4>
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <div class="cart-item" *ngFor="let item of cartItems">
+      <img class="cart-item-img" [src]="item.imageUrl" alt="{{ item.name }}">
+      <div class="cart-item-details">
+        <h5>{{ item.name }}</h5>
+        <p>₹{{ item.price }}</p>
+
+        <div class="quantity-control">
+          <button (click)="decreaseQuantity(item)">-</button>
+          <span>{{ item.quantity || 1 }}</span>
+          <button (click)="increaseQuantity(item)">+</button>
+        </div>
+
+        <div class="subtotal">Subtotal: ₹{{ item.price * (item.quantity || 1) }}</div>
+
+        <a (click)="saveForLater(item)">Save for Later</a> |
+<button type="button" (click)="removeItem(item)">Remove</button>
+<button type="button" (click)="saveForLater(item)">Save for Later</button>
+      </div>
+    </div>
+
+    <div class="cart-total">
+      <span>Total</span>
+      <span>₹{{ getTotal() }}</span>
+    </div>
+
+    <div class="cart-footer">
+      <button class="btn-checkout" [routerLink]="'/checkout'">Checkout</button>
+    </div>
+  </div>
+
+  <ng-template #emptyCart>
+    <p class="empty-cart">Your cart is empty</p>
+  </ng-template>
+</div>
+   <!-- <div class="cart-total">
+      <h5>Total: Rs. {{ getTotal() }}</h5>
+    </div>
+    <div class="cart-footer">
+      <button class="btn-checkout" (click)="showCart = false">Proceed to Checkout</button>
+    </div>-->
+  </div>
+  <ng-template #emptyCart>
+    <p class="empty-cart">Your cart is empty 🛍️</p>
+  </ng-template>
+</header>

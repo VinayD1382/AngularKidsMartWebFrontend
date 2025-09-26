@@ -1,0 +1,45 @@
+<div class="order-admin-container">
+  <h2>All Orders</h2>
+
+  <div *ngIf="loading" class="loading">Loading orders...</div>
+
+  <div *ngFor="let order of orders" class="order-card">
+    <div class="order-header">
+      <h3>Order #{{ order.id }}</h3>
+      <span class="status" [ngClass]="order.status.toLowerCase()">{{ order.status }}</span>
+    </div>
+
+    <p><strong>User:</strong> {{ order.name }} ({{ order.email }})</p>
+    <p><strong>Phone:</strong> {{ order.phone }}</p>
+    <p><strong>Address:</strong> {{ order.address }}</p>
+    <p><strong>Payment Method:</strong> {{ order.paymentMethod }}</p>
+    <p><strong>Total Amount:</strong> ₹{{ order.totalAmount }}</p>
+    <p><strong>Placed On:</strong> {{ order.createdAt | date:'medium' }}</p>
+
+    <h4>Products:</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of order.products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>₹{{ product.price }}</td>
+          <td>{{ product.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Admin action buttons -->
+    <div class="action-buttons" *ngIf="order.status === 'Pending'">
+      <button (click)="updateOrderStatus(order.id, 'Completed')" class="accept-btn">Accept</button>
+      <button (click)="updateOrderStatus(order.id, 'Cancelled')" class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>

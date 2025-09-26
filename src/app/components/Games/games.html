@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of games">
+      <img [src]="product.imageUrl" [alt]="product.name" />
+      <h3>{{ product.name }}</h3>
+      <p class="price">
+        Rs. {{ product.price }}
+      </p>
+      <div class="d-flex action-buttons">
+        <a *ngIf="product.link" [href]="product.link" target="_blank" class="btn buy-now">Play Now</a>
+      </div>
+    </div>
+  </div>
+  <app-brand-footer></app-brand-footer>
+</div>

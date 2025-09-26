@@ -1,0 +1,67 @@
+ <div class="promotion-container">
+  <div class="section left" style="background-image: url('HelpDesk2.png');">
+    <div class="text-content">
+      <h4>Need Help?</h4>
+      <h1>Contact Our Care</h1>
+      <p>Waiting to Contact you</p>
+      <button>Help</button>
+    </div>
+  </div>
+<div class="section center" style="background-image: url('Helpdesk3.png');">
+    <div class="text-content">
+    
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row footer-top">
+      <div class="col">
+        <h5>Store Location</h5>
+        <p>Bagalagunte Main Road<br></p>
+        <p>KidsMart@gmail.com</p>
+        <p>888-468-1382</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col">
+        <h5>Shop</h5>
+        <ul>
+          <li *ngFor="let link of shopLinks">{{ link }}</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h5>Customer Support</h5>
+        <ul>
+          <li *ngFor="let link of customerSupportLinks">{{ link }}</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h5>Policy</h5>
+        <ul>
+          <li *ngFor="let link of policyLinks">{{ link }}</li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+    <div class="footer-middle text-center">
+      <p>We accept the following paying methods</p>
+      <div class="payments">
+        <img *ngFor="let payment of paymentLogos" [src]="payment.src" [alt]="payment.alt" />
+      </div>
+    </div>
+
+    
+
+    <div class="footer-bottom text-center">
+      <p>© {{ currentYear }} by KidsMart. Powered and secured by <a href="" target="_blank">KidsMart</a></p>
+    </div>
+  </div>
+</footer>

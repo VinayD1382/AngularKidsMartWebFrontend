@@ -1,0 +1,44 @@
+<div class="product-container">
+  <h2>All Home Products</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td><img [src]="'/' + product.imageUrl" width="100" alt="product image" />
+</td>
+
+<ng-container *ngIf="editingProduct && editingProduct._id === product._id; else viewMode">
+          <td><input [(ngModel)]="editingProduct.name" /></td>
+          <td><input type="number" [(ngModel)]="editingProduct.price" /></td>
+          <td><input [(ngModel)]="editingProduct.category" /></td>
+          <td><input type="number" [(ngModel)]="editingProduct.quantity" /></td>
+          <td>
+            <button (click)="saveEdit()">Save</button>
+            <button (click)="cancelEdit()">Cancel</button>
+          </td>
+        </ng-container>
+
+        <ng-template #viewMode>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>
+            <button (click)="startEdit(product)">Edit</button>
+            <button (click)="deleteProduct(product._id!)">Delete</button>
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+</div>
