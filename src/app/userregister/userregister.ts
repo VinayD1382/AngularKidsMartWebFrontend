@@ -26,7 +26,7 @@ export class UserRegisterComponent {
 
     const payload = { name: this.name, email: this.email, password: this.password };
 
-    this.http.post('http://localhost:5000/api/angular-users/register', payload)
+    this.http.post('https://angularkidsmartwebbackend.onrender.com/api/angular-users/register', payload)
       .subscribe({
         next: (res: any) => {
           alert(res.message);
