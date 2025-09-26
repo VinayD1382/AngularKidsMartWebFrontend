@@ -26,4 +26,7 @@ export class BoysWearProductService {
   deleteProduct(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+  getProductById(id: string): Observable<ProductItem> {
+    return this.http.get<ProductItem>(`${this.apiUrl}/${id}`);
+  }
 }
