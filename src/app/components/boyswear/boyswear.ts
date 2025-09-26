@@ -30,13 +30,30 @@ export class Boyswear implements OnInit {
 
   ) {}
 
- ngOnInit(): void {
+ngOnInit(): void {
   this.route.paramMap.subscribe(params => {
     this.highlightedProductId = params.get('id');
-  });
 
-  this.loadProducts();
+    if (this.highlightedProductId) {
+      // Fetch only the specific product if ID exists
+      this.productService.getProductById(this.highlightedProductId).subscribe(
+        product => {
+          this.products = [product]; // Show only this product or merge with all products
+          this.loading = false;
+          this.openModal(product);
+        },
+        err => {
+          console.error('Error fetching product by ID:', err);
+          this.loading = false;
+        }
+      );
+    } else {
+      // Load all products normally
+      this.loadProducts();
+    }
+  });
 }
+
 
 private loadProducts() {
   this.productService.getProducts().subscribe(
