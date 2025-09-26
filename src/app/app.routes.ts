@@ -29,27 +29,27 @@ export const routes: Routes = [
 
   // Boyswear
   { path: 'boyswear', component: Boyswear },
-//  { path: 'boyswear/:id', component: Boyswear, data: { renderMode: 'client' } },
+ { path: 'boyswear/:id', component: Boyswear, data: { renderMode: 'client' } },
 
   // Girlwear
   { path: 'girlwear', component: Girlwear },
-//  { path: 'girlwear/:id', component: Girlwear, data: { renderMode: 'client' } },
+{ path: 'girlwear/:id', component: Girlwear, data: { renderMode: 'client' } },
 
   // Toys
   { path: 'toys', component: ToysComponent },
-//  { path: 'toys/:id', component: ToysComponent, data: { renderMode: 'client' } },
+ { path: 'toys/:id', component: ToysComponent, data: { renderMode: 'client' } },
 
   // Stationary
   { path: 'stationary', component: StationaryComponent },
-//  { path: 'stationary/:id', component: StationaryComponent, data: { renderMode: 'client' } },
+ { path: 'stationary/:id', component: StationaryComponent, data: { renderMode: 'client' } },
 
   // Kidselectronics
   { path: 'kidselectronics', component: Kidselectronics },
-//  { path: 'kidselectronics/:id', component: Kidselectronics, data: { renderMode: 'client' } },
+ { path: 'kidselectronics/:id', component: Kidselectronics, data: { renderMode: 'client' } },
 
   // Sale
   { path: 'sale', component: Sale },
-  //{ path: 'sale/:id', component: Sale, data: { renderMode: 'client' } },
+  { path: 'sale/:id', component: Sale, data: { renderMode: 'client' } },
 
   // Other static routes
   { path: 'games', component: Games },
