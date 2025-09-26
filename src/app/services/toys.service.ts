@@ -7,7 +7,7 @@ import { ProductItem } from '../models/product.model';
   providedIn: 'root' 
 })
 export class ToysProductService {
-  private apiUrl = 'http://localhost:5000/api/angular-toys'; 
+  private apiUrl = 'https://angularkidsmartwebbackend.onrender.com/api/angular-toys'; 
 
   constructor(private http: HttpClient) {}
 
