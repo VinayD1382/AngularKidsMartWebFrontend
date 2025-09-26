@@ -9,7 +9,7 @@ import { ProductItem } from '../models/product.model';
   providedIn: 'root' 
 })
 export class StationaryProductService {
-  private apiUrl = 'http://localhost:5000/api/angular-stationary'; 
+  private apiUrl = 'https://angularkidsmartwebbackend.onrender.com/api/angular-stationary'; 
 
   constructor(private http: HttpClient) {}
 
