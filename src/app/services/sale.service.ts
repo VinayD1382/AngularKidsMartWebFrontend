@@ -9,7 +9,7 @@ import { ProductItem } from '../models/product.model';
   providedIn: 'root' 
 })
 export class SaleProductService {
-  private apiUrl = 'http://localhost:5000/api/angular-sale'; 
+  private apiUrl = 'https://angularkidsmartwebbackend.onrender.com/api/angular-sale'; 
 
   constructor(private http: HttpClient) {}
 
