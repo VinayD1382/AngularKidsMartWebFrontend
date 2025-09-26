@@ -1,6 +1,8 @@
 [build]
   command = "ng build --configuration=production"
   publish = "dist/AngKidsMart/browser"
+  functions = "dist/AngKidsMart/server"
+
 
 [[redirects]]
   from = "/*"
