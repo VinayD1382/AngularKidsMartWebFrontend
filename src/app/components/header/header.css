@@ -1,15 +1,22 @@
 .top-bar {
-  background: black;
-  color: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 8px 20px;
-  font-size: 16px;
-}
-.top-bar .links a {
+  background: black;
   color: white;
-  margin-left: 15px;
-  text-decoration: none;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.top-bar .links {
+  margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+  }
 }
 
 .header {
@@ -18,6 +25,8 @@
   align-items: center;
   padding: 15px 30px;
   border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+  gap: 10px; 
 }
 .logo {
   font-size: 24px;
@@ -78,12 +87,14 @@
 }
 
 .kidsmart-banner img {
-  width: 1000%;      
-  height: 20px;     
-  object-fit: cover; 
-  border-radius: 12px; 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .header .header-offer {
   flex: 2;
@@ -335,8 +346,9 @@ height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
+  min-width: 200px;
   gap: 8px;
-  margin: 0 20px;
 }
 
 .search-bar input[type="text"] {
@@ -349,17 +361,24 @@ height: 90px;
   transition: all 0.3s ease-in-out;
 }
 
-.search-bar input[type="text"]:focus {
-  border-color: #ff6f61; 
-  box-shadow: 0 0 6px rgba(255, 111, 97, 0.5);
+.search-bar input[type="text"] {
+  flex: 1;
+  min-width: 100px;
+  max-width: 250px;
 }
 
-/* Search button */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+    order: 3; 
+  }
+}
+
 .search-bar button {
   padding: 10px 18px;
   border: none;
   border-radius: 25px;
-  background-color: #ff6f61; /* Theme color */
+  background-color: #ff6f61; 
   color: white;
   font-size: 14px;
   font-weight: 600;
@@ -367,13 +386,11 @@ height: 90px;
   transition: background-color 0.3s ease, transform 0.2s;
 }
 
-/* Button hover effect */
 .search-bar button:hover {
   background-color: #e85c50;
   transform: scale(1.05);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .search-bar input[type="text"] {
     width: 180px;
@@ -385,9 +402,8 @@ height: 90px;
     font-size: 13px;
   }
 }
-/* Login button: green background, black text */
 .login-btn {
-  background-color: #4CAF50; /* green */
+  background-color: #4CAF50; 
   color: black;
   border-radius: 20px;
   padding: 8px 14px;
@@ -398,10 +414,9 @@ height: 90px;
 }
 
 .login-btn:hover {
-  background-color: #45a049; /* darker green */
+  background-color: #45a049; 
 }
 
-/* Cart button: transparent background, black text */
 .cart-btn {
   background: none;
   color: black;
@@ -412,12 +427,11 @@ height: 90px;
 }
 
 .cart-btn:hover {
-  color: #ff5722; /* optional hover color */
+  color: #ff5722; 
 }
 
-/* Admin button: blue background, black text */
 .admin-btn {
-  background-color: #2196F3; /* blue */
+  background-color: #2196F3; 
   color: black;
   border-radius: 20px;
   padding: 8px 14px;
@@ -428,22 +442,19 @@ height: 90px;
 }
 
 .admin-btn:hover {
-  background-color: #1976D2; /* darker blue */
-  color: white; /* optional hover text change */
+  background-color: #1976D2; 
+  color: white; 
 }
-/* Login button: green */
 button.login-btn.icon-btn {
-  background-color: #4CAF50 !important; /* green */
+  background-color: #4CAF50 !important; 
   color: black !important;
 }
 
-/* Admin button: blue */
 a.admin-btn.icon-btn {
-  background-color: #2196F3 !important; /* blue */
+  background-color: #2196F3 !important; 
   color: black !important;
 }
 
-/* Optional hover overrides */
 button.login-btn.icon-btn:hover {
   background-color: #45a049 !important;
 }
@@ -452,6 +463,7 @@ a.admin-btn.icon-btn:hover {
   background-color: #1976D2 !important;
   color: white !important;
 }
+/*
 .offer-banner {
   background: linear-gradient(90deg, #931629, #ff4b2b);
   color: white;
@@ -462,6 +474,20 @@ a.admin-btn.icon-btn:hover {
   margin: 15px 40px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   animation: pulse 2s infinite;
+}
+.offer-banner {
+  margin: 15px 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .offer-text {
+    font-size: 16px;
+  }
+  .offer-sub {
+    font-size: 12px;
+  }
 }
 
 .offer-badge {
@@ -486,10 +512,204 @@ a.admin-btn.icon-btn:hover {
   margin-top: 3px;
   font-style: italic;
   opacity: 0.9;
+}*/
+/* Offer Banner */
+
+/* Offer Banner 
+.offer-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 12px;
+  margin-left: 10px;
+  font-family: Arial, sans-serif;
+  max-width: 420px;
+  margin: 15px auto;  /* Center the banner horizontally 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  animation: floatBox 3s ease-in-out infinite;
+}
+*/
+.offer-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: white;
+  padding: 5px 25px;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  max-width: 420px;
+  width: 100%; /* Make it stretch within parent */
+  box-sizing: border-box; /* So padding doesn't cause overflow */
+  margin: 15px auto; /* Horizontally center the banner */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  animation: floatBox 3s ease-in-out infinite;
+}
+
+.offer-badge {
+  background: #ffeb3b;
+  color: black;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.offer-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.offer-text strong {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.offer-sub {
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Box-like floating animation */
+@keyframes floatBox {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 18px rgba(0,0,0,0.3);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .offer-banner {
+    padding: 10px 16px;
+    max-width: 100%;
+    margin: 20px auto; 
+     align-items: center;
+    text-align: center;
+    /* Keep centered on small screens */
+  }
+
+  .offer-text {
+    font-size: 1.2rem;
+  }
+
+  .offer-sub {
+    font-size: 0.85rem;
+  }
 }
 
 @keyframes pulse {
   0% { box-shadow: 0 0 10px rgba(14, 83, 88, 0.6); }
   50% { box-shadow: 0 0 25px rgb(3, 39, 71); }
   100% { box-shadow: 0 0 10px rgba(25, 152, 18, 0.6); }
+}
+.icons img {
+  max-width: 100%;
+  height: auto;
+}
+
+.childpage img,
+.childpage1 img {
+  max-width: 120px;
+  height: auto;
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .icons img {
+    max-width: 150px;
+  }
+  .childpage img,
+  .childpage1 img {
+    max-width: 80px;
+  }
+}@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .icons {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .childpage4 {
+    order: 2;
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .offer-banner {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+
+  .offer-text {
+    font-size: 18px;
+  }
+
+  .offer-sub {
+    font-size: 12px;
+  }
+
+  .search-bar {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .search-bar input[type="text"] {
+    width: 90%;
+    max-width: 300px;
+    font-size: 14px;
+  }
+
+  .search-bar button {
+    width: auto;
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .action-icons {
+    order: 4;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .childpage {
+    order: 5;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .childpage img {
+    max-width: 90px;
+  }
 }

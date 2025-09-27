@@ -61,6 +61,13 @@ export class BrandProducts {
       price: 399,
       onSale: true
     },
+    {
+      id: 7,
+      name: '',
+      imageUrl: 'brand7.png',
+      price: 399,
+      onSale: true
+    },
     
     
   ];

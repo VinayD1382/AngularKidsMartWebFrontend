@@ -4,4 +4,7 @@
   text-align: center;
   padding: 20px;
   margin-top: 30px;
+  width: 100%;
+  position: relative; /* or fixed if you want it always visible at bottom */
+  left: 0;
 }

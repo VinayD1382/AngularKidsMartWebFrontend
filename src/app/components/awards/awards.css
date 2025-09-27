@@ -1,26 +1,51 @@
-
 .promotion-container {
   display: flex;
-  justify-content: space-between;
   gap: 20px;
-  width: 1200px;
-  height: 300px;
-  margin-top: 10px;
-  margin-left: 175px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 20px 10px;
+  max-width: 100%;
+  margin: 20px auto;
+
+  /* NEW */
+  justify-content: flex-start; 
+  scroll-padding-inline: 50%; /* Ensures center snapping */
+}
+
+
+
+.promotion-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.promotion-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.promotion-container::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .section {
-  width: 48%;
-  color: white;
-  padding: 20px;
-  border-radius: 50px;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
+
 .text-content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
   max-width: 300px;
+  color: white;
 }
 
 .text-content h4 {
@@ -48,18 +73,14 @@
   border-radius: 5px;
 }
 
-.logo {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
 .best-sellers-heading {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #4b0082;
-  position: relative;
+  text-align: center;
   padding-bottom: 10px;
- text-align: center;
+  position: relative;
+  margin-top: 20px;
 }
 
 .best-sellers-heading::after {
@@ -70,4 +91,15 @@
   display: block;
   margin: 0 auto;
   border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+  .section {
+    width: 120px;
+    height: 120px;
+  }
+
+  .best-sellers-heading {
+    font-size: 1.5rem;
+  }
 }

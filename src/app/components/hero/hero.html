@@ -121,7 +121,7 @@
       <span class="badge">Best Prices</span>
       <h2>Incredible Prices on All Your Favorite Items</h2>
       <p>Get more for less on selected brands</p>
-      <button>Shop Now</button>
+      <button routerLink="/">Shop Now</button>
     </div>
     <div class="hero-img">
       <img [src]="currentImage" alt="Banner" />
@@ -134,7 +134,7 @@
       <h4>Holiday Deals</h4>
       <h1>Up to 30% off</h1>
       <p>Selected Toy Brands</p>
-      <button>Shop</button>
+      <button  routerLink="/toys">Shop</button>
     </div>
   </div>
 <div class="section center" style="background-image: url('Down4.png');">
@@ -142,7 +142,7 @@
     <h4>Hot Picks</h4>
     <h1>Play Get Better</h1>
     <p>Top Toys & Games at 50% Off</p>
-      <button>Shop</button>
+      <button routerLink="/games">Shop</button>
     </div>
   </div>
   <div class="section right" style="background-image: url('Down3.png');">
@@ -150,100 +150,8 @@
       <h4>Just In</h4>
       <h1>Dress Up The Kids</h1>
       <p>Top Clothing Brands</p>
-      <button>Shop</button>
+      <button routerLink="/girlwear">Shop</button>
     </div>
   </div>
 </div>
 
-<style>
-.hero {
-  position: relative;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.bg-layer {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-size: cover;
-  background-position: center;
-  filter: blur(10px) brightness(0.8);
-  transition: opacity 1s ease-in-out;
-}
-
-#bg1 {
-  z-index: 1;
-  opacity: 1;
-  background-image: url("/Hero10.png");
-}
-
-#bg2 {
-  z-index: 2;
-  opacity: 0;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 40px 80px;
-  color: #f3efef;
-}
-
-.hero-text {
-  max-width: 50%;
-}
-
-.hero-text .badge {
-  display: inline-block;
-  background: rgb(53, 190, 60);
-  color: rgb(18, 8, 8);
-  padding: 5px 10px;
-  font-size: 19px;
-  border-radius: 3px;
-  margin-bottom: 15px;
-}
-
-.hero-text h2 {
-  font-size: 40px;
-  line-height: 1.3;
-  margin-bottom: 15px;
-  color: rgb(246, 246, 246);
-}
-
-.hero-text p {
-  color: #fff9f9;
-  margin-bottom: 20px;
-}
-
-.hero-text button {
-  background: #6200ea;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 25px;
-  cursor: pointer;
-}
-
-.hero-img img {
-  max-width: 780px;
-  width: 100%;
-  border-radius: 400px;
-  transition: opacity 1s ease-in-out;
-}
-</style>

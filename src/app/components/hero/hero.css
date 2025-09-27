@@ -1,11 +1,18 @@
-/*.hero {
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero {
   position: relative;
-  height: 400px;
+  width: 100%;
+  min-height: 400px;      /* desktop baseline */
+  height: auto;           /* shrink based on content */
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
+  color: #fff;
+  padding: 40px 20px;
 }
-
 
 .hero-bg {
   position: absolute;
@@ -14,9 +21,8 @@
   width: 100%;
   height: 100%;
   background: url("/Hero10.png") no-repeat center center/cover;
-  filter: blur(10px) brightness(0.8);
+  filter: blur(8px) brightness(0.7);
   z-index: 1;
-  transition: background-image 1s ease-in-out;
 }
 
 .hero-content {
@@ -25,33 +31,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
   width: 100%;
-  padding: 40px 80px;
-  color: #f3efef;
+  max-width: 1200px;
+  padding: 20px;
 }
 
 .hero-text {
-  max-width: 50%;
+  flex: 1;
+  max-width: 600px;
 }
 
 .hero-text .badge {
   display: inline-block;
   background: rgb(53, 190, 60);
-  color: rgb(18, 8, 8);
-  padding: 5px 10px;
-  font-size: 19px;
-  border-radius: 3px;
+  color: #111;
+  padding: 6px 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
   margin-bottom: 15px;
 }
 
 .hero-text h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 1.3;
   margin-bottom: 15px;
 }
 
 .hero-text p {
-  color: #fff9f9;
+  font-size: 1.1rem;
   margin-bottom: 20px;
 }
 
@@ -59,31 +68,45 @@
   background: #6200ea;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 12px 28px;
   font-size: 16px;
   border-radius: 25px;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-text button:hover {
+  background: #4500b5;
+}
+
+.hero-img {
+  flex: 1;
+  text-align: center;
 }
 
 .hero-img img {
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
   border-radius: 10px;
+  transition: opacity 1s ease-in-out;
 }
-*/
 
+/* ===========================
+   PROMOTION SECTION
+=========================== */
 .promotion-container {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  width: 1500px;
+  width: 100%;
+  max-width: 1500px;
   height: 300px;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin: 10px auto;
+  padding: 0 10px;
 }
 
 .section {
-  width: 48%;
+  flex: 1;
   color: white;
   padding: 20px;
   border-radius: 10px;
@@ -125,4 +148,78 @@
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+/* ===========================
+   RESPONSIVE FIXES
+=========================== */
+@media (max-width: 1024px) {
+  .hero-content {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto; /* shrink properly */
+    padding: 30px 15px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-img img {
+    max-width: 260px;
+    margin-top: 20px;
+  }
+
+  .promotion-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .section {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 20px 10px;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .hero-text button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .hero-img img {
+    max-width: 200px;
+  }
+
+  .promotion-container {
+    gap: 10px;
+  }
+
+  .section {
+    height: 180px;
+  }
 }

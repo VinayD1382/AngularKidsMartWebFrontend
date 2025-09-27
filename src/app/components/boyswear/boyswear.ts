@@ -7,10 +7,11 @@ import { BoysWearProductService } from '../../services/Boyswear.service';
 import { ProductItem } from '../../models/product.model';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { FooterComponent } from '../footer/footer';
 @Component({
   selector: 'app-boyswear',
   standalone: true,
-  imports: [CommonModule, BrandFooterComponent],
+  imports: [CommonModule, BrandFooterComponent, FooterComponent],
   templateUrl: './boyswear.html',
   styleUrls: ['./boyswear.css'],
 })

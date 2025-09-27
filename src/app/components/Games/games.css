@@ -147,3 +147,34 @@ h2 {
   margin: 0.5rem auto 0;     
   border-radius: 2px;
 }
+@media (max-width: 768px) {
+  .modal-body {
+    flex-direction: column;
+  }
+  .modal-left img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+  .action-buttons .btn {
+    width: 100%;
+  }
+  .action-buttons .btn + .btn {
+    margin-top: 0.5rem;
+  }
+  .modal-content {
+    padding: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .action-buttons .buy-now {
+    flex: 1 1 100%;
+    width: 100%;
+    margin-left: 0;  /* ensure it's centered */
+  }
+}

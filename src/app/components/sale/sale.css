@@ -57,14 +57,14 @@ h2 {
 
 .action-buttons {
   display: flex;
-  justify-content: space-between;  /* Spread buttons evenly */
+  justify-content: space-between;  
   align-items: center;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
 .action-buttons .btn {
-  flex: 1;                     /* Equal width */
+  flex: 1;                    
   min-height: 40px;
   border-radius: 8px;
   padding: 0.55rem 0.8rem;
@@ -576,11 +576,35 @@ h2 {
   right: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #010101;
+  color: #ff9306;
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 .close-btn:hover {
   color: #000;
+}
+@media (max-width: 768px) {
+  .modal-body {
+    flex-direction: column;
+  }
+  .modal-left img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+  .action-buttons .btn {
+    width: 100%;
+  }
+  .action-buttons .btn + .btn {
+    margin-top: 0.5rem;
+  }
+  .modal-content {
+    padding: 16px;
+  }
 }
