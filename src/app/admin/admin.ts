@@ -49,7 +49,6 @@ export class Admin {
     'Stationary',
     'KidsElectronic',
     'Footwear',
-    'Games',
     'Sale'
   ];
   loading = false;
