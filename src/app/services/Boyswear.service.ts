@@ -7,7 +7,7 @@ import { ProductItem } from '../models/product.model';
   providedIn: 'root' 
 })
 export class BoysWearProductService {
-  private apiUrl = 'http://localhost:5000/api/angular-boyswear'; 
+  private apiUrl = 'https://angularkidsmartwebbackend.onrender.com/api/angular-boyswear'; 
 
   constructor(private http: HttpClient) {}
 
@@ -25,5 +25,8 @@ export class BoysWearProductService {
 
   deleteProduct(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+  getProductById(id: string): Observable<ProductItem> {
+    return this.http.get<ProductItem>(`${this.apiUrl}/${id}`);
   }
 }

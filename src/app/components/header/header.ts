@@ -71,7 +71,7 @@ export class HeaderComponent {
     if (!this.searchQuery.trim()) return;
 
     this.http
-      .get<any>(`http://localhost:5000/api/search/${this.searchQuery}`)
+      .get<any>(`https://angularkidsmartwebbackend.onrender.com/api/search/${this.searchQuery}`)
       .subscribe({
         next: product => {
           console.log('Found:', product);

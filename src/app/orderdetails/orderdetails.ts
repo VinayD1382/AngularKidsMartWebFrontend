@@ -42,7 +42,7 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   fetchOrders() {
-    this.http.get<AngularOrder[]>('http://localhost:5000/api/angular-orders')
+    this.http.get<AngularOrder[]>('https://angularkidsmartwebbackend.onrender.com/api/angular-orders')
       .subscribe({
         next: (res) => {
           this.orders = res;
@@ -56,7 +56,7 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   updateOrderStatus(orderId: number, status: string) {
-    this.http.patch(`http://localhost:5000/api/angular-orders/${orderId}`, { status })
+    this.http.patch(`https://angularkidsmartwebbackend.onrender.com/api/angular-orders/${orderId}`, { status })
       .subscribe({
         next: () => {
           alert(`Order #${orderId} marked as ${status}`);

@@ -61,7 +61,7 @@ export class FormPaymentComponent implements OnInit {
 };
 
 
-    this.http.post('http://localhost:5000/api/angular-orders', orderPayload)
+    this.http.post('https://angularkidsmartwebbackend.onrender.com/api/angular-orders', orderPayload)
       .subscribe({
         next: (res: any) => {
           alert('✅ Thank you! Your order will be delivered in 5-7 days.');

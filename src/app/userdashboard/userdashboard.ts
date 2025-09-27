@@ -43,7 +43,7 @@ export class UserDashboardComponent implements OnInit {
   }
 
   fetchUserOrders() {
-this.http.get<AngularOrder[]>(`http://localhost:5000/api/angular-orders/user-orders/${this.userEmail}`)
+this.http.get<AngularOrder[]>(`https://angularkidsmartwebbackend.onrender.com/api/angular-orders/user-orders/${this.userEmail}`)
       .subscribe({
         next: (res) => {
           this.orders = res;

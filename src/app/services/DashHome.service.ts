@@ -8,7 +8,7 @@ import { ProductItem } from '../models/product.model';
   providedIn: 'root'
 })
 export class DashBoardProductService {
-  private apiUrl = 'http://localhost:5000/api/angular-home-products';
+  private apiUrl = 'https://angularkidsmartwebbackend.onrender.com/api/angular-home-products';
 
   constructor(private http: HttpClient) {}
 
