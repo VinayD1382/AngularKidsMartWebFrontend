@@ -95,3 +95,55 @@
 .product-table tr:hover {
   background: #f9f9f9;
 }
+@media (max-width: 576px) {
+  .dashboard-container {
+    max-width: 100%;
+    margin: 15px;
+    padding: 10px;
+  }
+
+  .dashboard-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .loading-msg,
+  .no-orders {
+    font-size: 16px;
+  }
+
+  .order-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .order-header h3 {
+    font-size: 16px;
+  }
+
+  .status {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .product-title {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .product-table th,
+  .product-table td {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .product-table th {
+    font-weight: 500;
+  }
+
+  .product-table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+}
