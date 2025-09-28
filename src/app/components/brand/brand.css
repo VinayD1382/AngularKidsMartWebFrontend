@@ -149,7 +149,7 @@ h2 {
   align-items: stretch;
   gap: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 40px auto;
   padding: 0 15px;
 }
@@ -162,7 +162,7 @@ h2 {
   background-size: cover;
   background-position: center;
   position: relative;
-  min-height: 300px;
+  min-height: 400px;
   display: flex;
   align-items: flex-end;
 }
