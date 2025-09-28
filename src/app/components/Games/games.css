@@ -83,6 +83,7 @@ h2 {
   background: linear-gradient(90deg, #ff7a00 0%, #ff3b30 100%);
   color: #fff;
   border: none;
+   text-decoration: none;
   box-shadow: 0 4px 10px rgba(255,59,48,0.2);
 }
 
