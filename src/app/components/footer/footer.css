@@ -3,8 +3,26 @@
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 30px;
+  margin-top: 0px;
   width: 100%;
   position: relative; /* or fixed if you want it always visible at bottom */
   left: 0;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}/* 🔸 Remove left-right margin and padding globally for footer */
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+  background: #2c3e50; /* optional if you want full page dark */
+}
+
+main {
+  flex: 1; /* pushes footer down */
+  background: #fff; /* keep content area white */
 }
