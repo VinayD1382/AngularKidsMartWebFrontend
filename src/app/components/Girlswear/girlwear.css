@@ -408,12 +408,22 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(50, 49, 49, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2000;
   padding: 1rem;
+}
+
+.modal-content {
+  background: #fff;   /* ✅ white background */
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  position: relative;
 }
 /* Ensure modal-content is positioned relative for the button */
 .modal-content.image-only {
@@ -437,15 +447,7 @@ h2 {
   border-radius: 8px;
   display: block;
 }
-.modal-content {
-  background: #fff;   /* ✅ white background */
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 500px;
-  width: 90%;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-  position: relative;
-}
+
 /* Close button sits on top of image */
 .modal-content.image-only .close-btn {
   position: absolute;  /* relative to modal-content now */
@@ -605,7 +607,8 @@ h2 {
 /* Reset default browser body margin & padding */
 @media (max-width: 576px) {
   .action-buttons {
-    flex-direction: column;
+    flex-direction: row !important; /* ✅ keep in a row */
+    gap: 8px; 
   }
   .action-buttons .btn {
     width: 100%;
@@ -666,26 +669,37 @@ h2 {
 @media (max-width: 576px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 products per row */
-    gap: 10px; /* reduce vertical & horizontal spacing */
-    margin-bottom: 20px; /* optional */
+    gap: 8px; /* smaller gap between cards */
+    margin-bottom: 15px; /* reduce space below grid */
   }
 
   .product-card {
-    padding: 8px; /* smaller padding */
-    /* if you have margins on inner elements like title, price, reduce them */
+    padding: 6px; /* smaller padding inside card */
+    border-radius: 6px; /* slightly smaller rounded corners */
+  }
+
+  .product-card img {
+    height: 150px; /* reduce image height */
+  }
+
+  .product-card h3, .product-card .product-title {
+    font-size: 0.85rem; /* smaller title font */
+    margin-bottom: 4px;
   }
 
   .product-card .price {
-    margin-top: 5px; /* reduce space above price */
-    font-size: 0.85rem; /* optional smaller text */
-  }
-
-  .product-card h2, .product-card .product-title {
-    margin-bottom: 5px; /* reduce space below title */
-    font-size: 0.9rem; /* optional smaller title */
+    font-size: 0.75rem; /* smaller price font */
+    margin-top: 4px;
   }
 
   .action-buttons {
-    margin-top: 0px; /* reduce spacing above buttons */
+    margin-top: 5px; /* less spacing above buttons */
+    gap: 4px; /* reduce button spacing */
+  }
+
+  .action-buttons .btn {
+    font-size: 0.7rem; /* smaller button text */
+    padding: 0.4rem 0.6rem; /* smaller button padding */
+    min-height: 32px; /* reduce button height */
   }
 }
