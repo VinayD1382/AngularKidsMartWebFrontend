@@ -2,7 +2,15 @@
 .container {
   padding: 0px;
 }
-
+.modal-content {
+  background: #fff;   /* ✅ white background */
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  position: relative;
+}
 h2 {
   margin-bottom: 20px;
 }
