@@ -43,3 +43,60 @@ button:last-child {
   background: #f44336;
   color: white;
 }
+
+/* ✅ Tablets */
+@media (max-width: 992px) {
+  .product-container {
+    padding: 15px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}
+
+/* ✅ Mobiles */
+@media (max-width: 576px) {
+  .product-container {
+    padding: 10px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;   /* allows horizontal scroll */
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  input {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  img {
+    width: 70px;
+    height: auto;
+  }
+}
