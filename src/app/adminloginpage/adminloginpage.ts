@@ -18,7 +18,7 @@ export class AdminLoginPageComponent {
   constructor(private router: Router) {}
 
   login() {
-    if(this.username === 'vinay@123' && this.password === 'vinay123') {
+    if(this.username === 'vinay@1382' && this.password === 'vinay123') {
       this.errorMessage = '';
       this.router.navigate(['/admin']);
     } else {
