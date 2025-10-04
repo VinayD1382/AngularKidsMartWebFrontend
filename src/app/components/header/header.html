@@ -62,11 +62,11 @@
   />
   <button (click)="searchProduct()" style="background-color: rgb(46, 25, 167);">Search</button>
  <div class="action-icons">
-  <button routerLink="/userlogin" class="icon-btn login-btn" style="color: rgb(251, 249, 249); background-color: rgb(22, 69, 2);">
+  <button routerLink="/userlogin" *ngIf="!hideAdminBtn" class="icon-btn login-btn" style="color: rgb(251, 249, 249); background-color: rgb(22, 69, 2);">
     <i class="fas fa-user"></i> LogIn
   </button>
 
-  <button class="icon-btn cart-btn" [routerLink]="'/cart'" style="background-color: rgb(62, 23, 74);">
+  <button class="icon-btn cart-btn" *ngIf="!hideAdminBtn" [routerLink]="'/cart'" style="background-color: rgb(62, 23, 74);">
     <i class="fas fa-shopping-cart"></i>
     <span  *ngIf="cartCount > 0">{{ cartCount }}</span>
   </button>
