@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 import { ProductItem } from '../../models/product.model';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -20,12 +21,22 @@ export class HeaderComponent {
   savedForLater: any[] = [];
   searchQuery: string = "";
 
+  hideAdminBtn = false; // Hide admin button on dashboard
+
   constructor(
     private cartService: CartService,
     private router: Router,
     private http: HttpClient
   ) {
+    // Update cart count
     this.cartService.cartCount$.subscribe(count => (this.cartCount = count));
+
+    // Hide Admin button on /userdashboard
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        this.hideAdminBtn = event.urlAfterRedirects.includes('/userdashboard');
+      });
   }
 
   toggleCart() {
@@ -74,8 +85,6 @@ export class HeaderComponent {
       .get<any>(`https://angularkidsmartwebbackend.onrender.com/api/search/${this.searchQuery}`)
       .subscribe({
         next: product => {
-          console.log('Found:', product);
-
           switch (product.category.toLowerCase()) {
             case 'boyswear':
               this.router.navigate(['/boyswear', product._id]);
