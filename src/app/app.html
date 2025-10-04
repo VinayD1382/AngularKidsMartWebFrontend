@@ -1,20 +1,6 @@
-<!--<app-header></app-header>
-<app-navbar></app-navbar>
-<app-hero></app-hero>
-<app-products></app-products> 
-<app-brands></app-brands>
-<app-awards></app-awards>
-<div class="container">
-</div>
-<app-brand-footer></app-brand-footer>
-<app-footer></app-footer>
-<div class="chat-button" (click)="openChat()">
-  <i class="material-icons">chat</i>
-</div>
-<router-outlet></router-outlet>
--->
 
 <app-header></app-header>
-<app-navbar></app-navbar>
+
+<app-navbar *ngIf="!hideNavbar"></app-navbar>
 
 <router-outlet></router-outlet>
