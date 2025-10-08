@@ -44,7 +44,6 @@ button:last-child {
   color: white;
 }
 
-/* ✅ Tablets */
 @media (max-width: 992px) {
   .product-container {
     padding: 15px;
@@ -68,7 +67,7 @@ button:last-child {
   }
 }
 
-/* ✅ Mobiles */
+
 @media (max-width: 576px) {
   .product-container {
     padding: 10px;
@@ -76,7 +75,7 @@ button:last-child {
 
   table {
     display: block;
-    overflow-x: auto;   /* allows horizontal scroll */
+    overflow-x: auto;   
     white-space: nowrap;
     font-size: 13px;
   }
