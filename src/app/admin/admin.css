@@ -189,12 +189,12 @@ textarea {
   .footer-buttons {
     flex-direction: column;
     gap: 10px;
-    margin: 0; /* remove all margins */
+    margin: 0;
   }
 
   .category-buttons {
     flex-direction: column;
     gap: 10px;
-    margin: 0; /* remove all margins */
+    margin: 0; 
   }
 }
