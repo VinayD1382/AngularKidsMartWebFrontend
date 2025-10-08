@@ -57,14 +57,14 @@ h2 {
 
 .action-buttons {
   display: flex;
-  justify-content: space-between;  /* Spread buttons evenly */
+  justify-content: space-between;  
   align-items: center;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
 .action-buttons .btn {
-  flex: 1;                     /* Equal width */
+  flex: 1;                     
   min-height: 40px;
   border-radius: 8px;
   padding: 0.55rem 0.8rem;
@@ -77,7 +77,6 @@ h2 {
   transition: all 0.2s ease;
 }
 
-/* Specific buttons */
 .action-buttons .buy-now {
   background: linear-gradient(90deg, #ff7a00 0%, #ff3b30 100%);
   color: #fff;
@@ -144,263 +143,7 @@ h2 {
   background: linear-gradient(90deg, #ff7a00, #ff3b30);
   margin: 0.5rem auto 0;     
   border-radius: 2px;
-}/*
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
 }
-
-.modal-content {
-  background-color: #fff;
-  padding: 30px 20px;
-  border-radius: 16px;
-  width: 50%;
-  max-width: 500px;      
-  max-height: 90%;
-  text-align: left;
-  position: relative;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  animation: slideUp 0.3s ease-out;
-  display: flex;
-  flex-direction: column;  
-}
-.modal-content.image-only {
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
-  border-radius: 0;
-  width: auto;
-  max-width: 45%;
-}
-
-.modal-body {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-left {
-  flex: 1;
-  text-align: center;
-}
-
-.modal-left img {
-  max-width: 250px;
-  max-height: 250px;
-  border-radius: 8px;
-}
-
-.modal-right {
-  flex: 1;
-  text-align: left;
-}
-
-.product-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.price {
-  font-size: 20px;
-  color: #007bff;
-  margin-bottom: 15px;
-}
-
-.quantity-control {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 15px 0;
-}
-
-.quantity-control button {
-  background: black;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.custom-checkout {
-  background-color: rgb(191, 85, 85) !important;
-  color: white !important;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.custom-checkout:hover {
-  background-color: #333 !important;
-}
-.action-buttons {
-  display: flex;
-  gap: 0.6rem;          
-  align-items: center;
-  justify-content: space-between;
-}
-
-.action-buttons .btn {
-  flex: 1;  
-  border-radius: 300px;
-  padding: 0.55rem 0.9rem;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
-}
-
-.action-buttons .buy-now {
-  background: linear-gradient(90deg, #ff7a00 0%, #ff3b30 100%);
-  color: #fff;
-  border: 0;
-  outline: none;
-  box-shadow: 0 6px 18px rgba(255,59,48,0.18), 0 1px 0 rgba(0,0,0,0.03);
-}
-
-.action-buttons .add-cart {
-  background: transparent;
-  color: #ff3b30;
-  border: 2px solid rgba(255,59,48,0.14);
-}
-
-.action-buttons .eye-btn {
-  background: #6f42c1;
-  color: #fff;
-  border: none;
-}
-
-.action-buttons .eye-btn:hover {
-  background: #4a2883;
-}
-
-.action-buttons .buy-now:hover,
-.action-buttons .add-cart:hover {
-  transform: translateY(-2px);
-  opacity: 0.98;
-}
-
-.action-buttons .buy-now:active,
-.action-buttons .add-cart:active,
-.action-buttons .eye-btn:active {
-  transform: translateY(0);
-}
-
-@media (max-width: 576px) {
-  .action-buttons {
-    flex-direction: column;
-  }
-  .action-buttons .btn {
-    width: 100%;
-  }
-  .action-buttons .btn + .btn {
-    margin-top: 0.5rem;
-  }
-}
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #060606;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.close-btn:hover {
-  color: #000;
-}
-*/
-/*
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 300px;
-  width: 90%;
-  height: 500px;
-  position: relative;
-  text-align: center;
-}
-
-.modal-content.image-only {
-  background: transparent;
-  box-shadow: none;
-}
-
-.modal-img {
-  max-width: 100%;
-  max-height: 80vh;
-  border-radius: 8px;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #0c0c0c;
-  cursor: pointer;
-}
-
-.close-btn:hover {
-  color: #faf9f9;
-}
-
-.quantity-control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin: 10px 0;
-}
-
-.quantity-control button {
-  width: 32px;
-  height: 32px;
-  border: none;
-  border-radius: 50%;
-  font-size: 18px;
-  background: #ddd;
-  cursor: pointer;
-}
-
-.quantity-control button:hover {
-  background: #bbb;
-}
-*/
 .modal-overlay {
   position: fixed;
   top: 0;
