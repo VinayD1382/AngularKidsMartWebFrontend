@@ -52,7 +52,7 @@ export class BoysWearView implements OnInit {
       }
     });
   }
-addddrdytf @jyuv
+
   startEdit(product: ProductItem) {
     this.editingProduct = { ...product };
   }
