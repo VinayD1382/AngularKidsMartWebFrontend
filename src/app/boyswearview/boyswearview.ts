@@ -35,7 +35,7 @@ export class BoysWearView implements OnInit {
     if (!this.newProduct.name || !this.newProduct.price) {
       alert('Name and Price are required');
       return;
-    }
+    }  
 
     this.loading = true;
     this.productService.addProduct(this.newProduct).subscribe({
