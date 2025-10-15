@@ -65,11 +65,11 @@ export const routes: Routes = [
   { path: 'toysviewpro', component: ToysView },
   { path:'formpayment', component: FormPaymentComponent },
   { path:'orderdetails', component: OrderDetailsComponent },
-  { path:'adminlogin', component: AdminLoginPageComponent },
+  /*{ path:'adminlogin', component: AdminLoginPageComponent },
   { path:'userlogin', component: UserLoginComponent },
   { path:'userregister', component: UserRegisterComponent },
   { path:'userdashboard', component: UserDashboardComponent },
-
+*/
   // Fallback
   { path: '**', redirectTo: '' },
 ];
